@@ -1,0 +1,49 @@
+@import 'utils';
+
+.weapon-list {
+  .weapon-object {
+    padding: 1.5rem;
+    transition: all .15s ease-in;
+    
+    // 내부 아이템 세로 중앙 정렬
+    display: flex;
+    align-items: center;
+
+    @include media("<medium") {
+      padding: 0;
+    }
+
+    .weapon-img {
+      background-color: white;
+      border-radius: 0.4em;
+      @include material-shadow(1, 0.5);
+
+      padding: 2px;
+      img {
+        width: 50px;
+        height: 50px;        
+      }
+    }
+
+    .weapon-upgrade-name {
+      padding-left: 1rem;
+    }
+
+    .weapon-name {
+      padding-left: 0.5rem;      
+    }
+
+    .weapon-damage {
+      margin-left: auto;
+      color: $oc-red-9;
+    }
+
+    .option-btn {
+      margin-left: auto;
+    }
+  }
+
+  .weapon-object + .weapon-object { // 아이템 사이 여백
+    border-top: 1px solid $oc-gray-3;
+  }
+}

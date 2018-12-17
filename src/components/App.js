@@ -8,6 +8,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={WeaponPage} />
+          <Route exact path="/item/wp" component={WeaponPage} />
         </Switch>
       </div>
     );

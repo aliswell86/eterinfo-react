@@ -1,9 +1,12 @@
 @import 'utils';
 
 .header {
-  @include material-shadow(3, 0.4);
+  // @include material-shadow(3, 0.4);
   .header-content {
-    height: 4rem;
+    position: fixed;
+    z-index: 9999;
+    background-color: white;
+    height: 4rem;    
     width: 1400px;
     margin: 0 auto; // 중앙 정렬
     padding-left: 3rem;
