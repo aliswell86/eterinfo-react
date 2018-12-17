@@ -11,8 +11,8 @@ const WeaponObject = () => {
         <img src="http://image.mgame.com/mgamezzang/games/eternalcity_cms/attack/159.gif"/>
       </div>
       <div className={cx('weapon-upgrade-name')}>MAX +8</div>
-      <div className={cx('weapon-name')}>노틸러스 스워드</div>
-      <h2 className={cx('weapon-damage')}>34,990</h2>
+      <div className={cx('weapon-name')}>[CL] FN SCAR-H EGLM/AntiTank</div>
+      <div className={cx('weapon-damage')}>3,990,000</div>
       <div className={cx('option-btn')}>
         <div>드롭다운 몸체</div>
         <div>드롭다운 강화</div>

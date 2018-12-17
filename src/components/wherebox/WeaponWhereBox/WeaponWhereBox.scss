@@ -1,0 +1,38 @@
+@import 'utils';
+
+.weapon-where-box {
+  margin: 0 auto;
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include media("<wide") {
+    width: 768px;
+  }
+  @include media("<large") {
+    width: 512px;
+  }
+  @include media("<medium") {
+    width: 100%;
+  }
+
+  .cl-where {
+    display: flex;
+  }
+
+  .weapon-illegal-where {
+    display: flex;
+  }
+
+  .weapon-type-where {
+    display: flex;
+  }
+
+  .grade-where {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+  }
+}
