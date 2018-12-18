@@ -1,7 +1,7 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
 import ListWrapper from 'components/list/ListWrapper';
-import WeaponList from 'components/list/WeaponList';
+import WeaponListContainer from 'containers/list/WeaponListContainer';
 import WeaponWhereBoxContainer from 'containers/wherebox/WeaponWhereBoxContainer';
 
 const WeaponPage = () => {
@@ -9,7 +9,7 @@ const WeaponPage = () => {
     <PageTemplate>
       <WeaponWhereBoxContainer/>
       <ListWrapper>        
-        <WeaponList/>
+        <WeaponListContainer/>
       </ListWrapper>      
     </PageTemplate>
   )

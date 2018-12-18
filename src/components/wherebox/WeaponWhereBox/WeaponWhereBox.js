@@ -6,12 +6,13 @@ import { Checkbox } from 'antd';
 
 const cx = classNames.bind(styles);
 
-const WeaponWhereBox = ({whereSet}) => {
+const WeaponWhereBox = ({handleWhereSet, weaponWhere, weaponList}) => {
+  
   return (
     <div className={cx('weapon-where-box')}>
       <div className={cx('cl-where')}>
-        <div><Checkbox name="isCl" onChange={whereSet}>CL</Checkbox></div>
-        <div><Checkbox>NonCL</Checkbox></div>
+        <div><Checkbox name="isCl" onChange={handleWhereSet}>CL</Checkbox></div>
+        <div><Checkbox name="isNonCl" onChange={handleWhereSet}>NonCL</Checkbox></div>
       </div>
       <div className={cx('weapon-illegal-where')}>
         <div><Checkbox>합법</Checkbox></div>

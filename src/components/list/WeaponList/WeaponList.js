@@ -4,15 +4,15 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const WeaponObject = () => {
+const WeaponObject = ({item_nm, dmg}) => {
   return (
     <div className={cx('weapon-object')}>
       <div className={cx('weapon-img')}>
         <img src="http://image.mgame.com/mgamezzang/games/eternalcity_cms/attack/159.gif" alt="hi"/>
       </div>
       <div className={cx('weapon-upgrade-name')}>MAX +8</div>
-      <div className={cx('weapon-name')}>[CL] FN SCAR-H EGLM/AntiTank</div>
-      <div className={cx('weapon-damage')}>3,990,000</div>
+      <div className={cx('weapon-name')}>{item_nm}</div>
+      <div className={cx('weapon-damage')}>{dmg}</div>
       <div className={cx('option-btn')}>
         <div>드롭다운 몸체</div>
         <div>드롭다운 강화</div>
@@ -21,18 +21,22 @@ const WeaponObject = () => {
   );
 }
 
-const WeaponList = () => {
-  const wpItemList = <WeaponObject/>;
+const WeaponList = ({weapons}) => {
+  const weaponList = weapons.map((weapon) => {
+    const {_id, item_nm, dmg} = weapon;
+
+    return (
+      <WeaponObject
+        item_nm={item_nm}
+        dmg={dmg}
+        key={_id}
+        id={_id}/>
+    )
+  });
 
   return (
     <div className={cx('weapon-list')}>
-      {wpItemList}
-      {wpItemList}
-      {wpItemList}
-      {wpItemList}
-      {wpItemList}
-      {wpItemList}
-      {wpItemList}
+      {weaponList}
     </div>
   )
 };

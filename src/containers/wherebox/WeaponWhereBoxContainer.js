@@ -6,24 +6,39 @@ import * as weaponActions from 'store/modules/weapon';
 
 class WeaponWhereBoxContainer extends Component {
 
-  whereSet = (e) => {    
+  getWeaponList = () => {
+    const {WeaponActions, weaponWhere} = this.props;
+    WeaponActions.getWeaponList(weaponWhere);
+  }
+
+  componentDidMount() {
+    this.getWeaponList();
+  }
+
+  handleWhereSet = (e) => {    
     const {name, checked} = e.target;
     const {WeaponActions} = this.props;
     WeaponActions.setWeaponWhere({name, checked});
   }
 
   render() {
-    const {whereSet} = this;
+    const {handleWhereSet} = this;
+    const {weaponWhere, weaponList} = this.props;
 
     return (
-      <WeaponWhereBox whereSet={whereSet} />
+      <WeaponWhereBox 
+        handleWhereSet={handleWhereSet}
+        weaponWhere={weaponWhere}
+        weaponList={weaponList}
+        />
     );
   }
 }
 
 export default connect(
   (state) => ({
-    weaponWhere: state.weapon.get('weaponWhere')
+    weaponWhere: state.weapon.toJS().weaponWhere,
+    weaponList: state.weapon.toJS().weaponList
   }),
   (dispatch) => ({
     WeaponActions: bindActionCreators(weaponActions, dispatch)
