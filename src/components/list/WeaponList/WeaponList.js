@@ -8,7 +8,7 @@ const WeaponObject = () => {
   return (
     <div className={cx('weapon-object')}>
       <div className={cx('weapon-img')}>
-        <img src="http://image.mgame.com/mgamezzang/games/eternalcity_cms/attack/159.gif"/>
+        <img src="http://image.mgame.com/mgamezzang/games/eternalcity_cms/attack/159.gif" alt="hi"/>
       </div>
       <div className={cx('weapon-upgrade-name')}>MAX +8</div>
       <div className={cx('weapon-name')}>[CL] FN SCAR-H EGLM/AntiTank</div>

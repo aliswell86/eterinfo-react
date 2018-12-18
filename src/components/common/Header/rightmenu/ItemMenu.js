@@ -21,9 +21,9 @@ const menu = (
 
 const ItemMenu = () => (
   <Dropdown overlay={menu}>
-    <a className="ant-dropdown-link" href="#">
+    <Link className="ant-dropdown-link" to="/">
       아이템정보 <Icon type="down" />
-    </a>
+    </Link>
   </Dropdown>
 );
 

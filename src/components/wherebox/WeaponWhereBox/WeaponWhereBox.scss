@@ -1,6 +1,9 @@
 @import 'utils';
 
 .weapon-where-box {
+  @include material-shadow(2, 0.4);
+  background:$oc-gray-0;
+  width: 1024px;
   margin: 0 auto;
 
   padding-top: 3rem;
@@ -18,21 +21,63 @@
     width: 100%;
   }
 
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1rem;
+  
   .cl-where {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0.5rem;
+
+    @include media("<large") {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .weapon-illegal-where {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0.5rem;
+
+    @include media("<large") {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   .weapon-type-where {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+
+    .weapon-type1 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0.5rem;
+
+      @include media("<large") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .weapon-type2 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0.5rem;
+
+      @include media("<large") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
   }
 
   .grade-where {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
+
+    @include media("<large") {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
