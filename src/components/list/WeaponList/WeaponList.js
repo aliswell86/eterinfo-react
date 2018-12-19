@@ -21,8 +21,8 @@ const WeaponObject = ({item_nm, dmg}) => {
   );
 }
 
-const WeaponList = ({weapons}) => {
-  const weaponList = weapons.map((weapon) => {
+const WeaponList = ({weaponWheres}) => {
+  const weaponList = weaponWheres.map((weapon) => {
     const {_id, item_nm, dmg} = weapon;
 
     return (

@@ -6,17 +6,16 @@ import * as weaponActions from 'store/modules/weapon';
 
 class WeaponListContainer extends Component {
   render() {
-    const {weapons} = this.props;
-
+    const {weaponWheres} = this.props;
     return (
-      <WeaponList weapons={weapons}/>
+      <WeaponList weaponWheres={weaponWheres}/>
     );
   }
 }
 
 export default connect(
   (state) => ({
-    weapons: state.weapon.toJS().weapons
+    weaponWheres: state.weapon.toJS().weaponWheres
   }),
   (dispatch) => ({
     WeaponActions: bindActionCreators(weaponActions, dispatch)

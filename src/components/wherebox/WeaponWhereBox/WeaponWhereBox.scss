@@ -26,22 +26,26 @@
   grid-gap: 1rem;
   
   .cl-where {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 0.5rem;
+    .clyn {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0.5rem;
 
-    @include media("<large") {
-      grid-template-columns: repeat(4, 1fr);
+      @include media("<large") {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 
   .weapon-illegal-where {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 0.5rem;
+    .illegal{
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 0.5rem;
 
-    @include media("<large") {
-      grid-template-columns: repeat(4, 1fr);
+      @include media("<large") {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 

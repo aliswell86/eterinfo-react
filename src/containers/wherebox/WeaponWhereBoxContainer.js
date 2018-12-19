@@ -16,20 +16,30 @@ class WeaponWhereBoxContainer extends Component {
   }
 
   handleWhereSet = (e) => {    
-    const {name, checked} = e.target;
-    const {WeaponActions} = this.props;
-    WeaponActions.setWeaponWhere({name, checked});
+    const {name, value, checked} = e.target;
+    const {WeaponActions, weapons} = this.props;
+
+    if(name === 'clyn' || name === 'illegal') {
+      WeaponActions.setWeaponWhere({name, value});
+    }else{
+      WeaponActions.setWeaponWhere({name, checked});
+    }
+    
+    if(weapons.length > 0) {
+      WeaponActions.getWeaponWhereList();
+    }else{
+      this.getWeaponList();
+    }
   }
 
   render() {
     const {handleWhereSet} = this;
-    const {weaponWhere, weaponList} = this.props;
+    const {weaponWhere} = this.props;
 
     return (
       <WeaponWhereBox 
         handleWhereSet={handleWhereSet}
         weaponWhere={weaponWhere}
-        weaponList={weaponList}
         />
     );
   }
@@ -38,7 +48,7 @@ class WeaponWhereBoxContainer extends Component {
 export default connect(
   (state) => ({
     weaponWhere: state.weapon.toJS().weaponWhere,
-    weaponList: state.weapon.toJS().weaponList
+    weapons: state.weapon.toJS().weapons
   }),
   (dispatch) => ({
     WeaponActions: bindActionCreators(weaponActions, dispatch)
