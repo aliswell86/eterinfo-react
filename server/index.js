@@ -5,6 +5,8 @@ const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const mongoose = require('mongoose');
 const api = require('./src/api');
+const serve = require('koa-static');
+const path = require('path');
 
 const app = new Koa();
 const router = new Router();
@@ -24,6 +26,7 @@ mongoose.connect(mongoURI).then(() => {
 // 라우터 설정
 router.use('/api', api.routes()); // api 라우트 적용
 
+app.use(serve(__dirname+'/public'));
 // 라우터 적용 전에 bodyParser 적용
 app.use(bodyParser());
 

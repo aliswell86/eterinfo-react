@@ -34,13 +34,10 @@ class WeaponWhereBoxContainer extends Component {
 
   render() {
     const {handleWhereSet} = this;
-    const {weaponWhere} = this.props;
+    const {loading} = this.props;
 
     return (
-      <WeaponWhereBox 
-        handleWhereSet={handleWhereSet}
-        weaponWhere={weaponWhere}
-        />
+      <WeaponWhereBox handleWhereSet={handleWhereSet} loading={loading}/>
     );
   }
 }
@@ -48,7 +45,8 @@ class WeaponWhereBoxContainer extends Component {
 export default connect(
   (state) => ({
     weaponWhere: state.weapon.toJS().weaponWhere,
-    weapons: state.weapon.toJS().weapons
+    weapons: state.weapon.toJS().weapons,
+    loading: state.pender.pending['weapon/GET_WEAPON_LIST']
   }),
   (dispatch) => ({
     WeaponActions: bindActionCreators(weaponActions, dispatch)
