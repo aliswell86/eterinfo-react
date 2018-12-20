@@ -27,6 +27,7 @@ mongoose.connect(mongoURI).then(() => {
 router.use('/api', api.routes()); // api 라우트 적용
 
 app.use(serve(__dirname+'/public'));
+app.use(serve(path.resolve(__dirname, '../build/')));
 // 라우터 적용 전에 bodyParser 적용
 app.use(bodyParser());
 
